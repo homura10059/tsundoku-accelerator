@@ -5,7 +5,7 @@ import { sliceByNumber } from '../../lib/arrays'
 import { getUnixTimeNow } from '../../lib/dates'
 import * as discord from '../../lib/discord'
 import { supabase } from '../../lib/supabase'
-import { definitions } from '../../types/supabase'
+import { definitions } from '../../types/generated/supabase'
 
 type Item = {
   id: string

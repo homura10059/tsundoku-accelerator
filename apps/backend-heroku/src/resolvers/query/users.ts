@@ -1,5 +1,5 @@
 import { supabase } from '../../lib/supabase'
-import { definitions } from '../../types/supabase'
+import { definitions } from '../../types/generated/supabase'
 import { QueryResolver } from './index'
 
 const users: QueryResolver['users'] = async () => {

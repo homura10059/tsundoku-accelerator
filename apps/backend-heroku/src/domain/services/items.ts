@@ -1,7 +1,7 @@
 import { notifyError } from '../../lib/discord'
 import { queue } from '../../lib/queue'
 import { supabase } from '../../lib/supabase'
-import { definitions } from '../../types/supabase'
+import { definitions } from '../../types/generated/supabase'
 import { scrapeItem } from '../repositories/items'
 
 export const fetchItem = async (id: string): Promise<definitions['items']> => {
