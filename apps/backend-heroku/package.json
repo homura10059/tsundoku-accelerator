@@ -1,5 +1,5 @@
 {
-  "name": "amazon-ebook-api",
+  "name": "backend-heroku",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/o-hayato/amazon-ebook-api.git",
