@@ -1,0 +1,13 @@
+node_modules
+
+/.cache
+/build
+/dist
+/public/build
+
+/.idea
+/.mf
+
+/app/styles/generated.css
+
+.env

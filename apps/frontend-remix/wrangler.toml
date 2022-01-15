@@ -1,0 +1,22 @@
+name = "ta-remix"
+type = "javascript"
+
+zone_id = ""
+account_id = ""
+route = ""
+workers_dev = true
+
+[site]
+bucket = "./public"
+entry-point = "."
+
+[build]
+command = "npm run build:worker"
+watch_dir = "build/index.js"
+
+[build.upload]
+format="service-worker"
+
+[[kv_namespaces]]
+binding = "CACHE_KV"
+id = "a960c45727a2433b9ad8ce1598817866"
