@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "frontend-remix",
+  "version": "1.0.0",
   "description": "",
   "license": "",
   "scripts": {
