@@ -1,0 +1,27 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build
+        run: yarn & yarn build
+  deploy-frontend-remix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        run: ls -l ./
+        working-directory: ./apps/frontend-remix
+  deploy-backend-heroku:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        run: ls -l ./
+        working-directory: ./apps/backend-heroku
