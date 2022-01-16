@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'app/frontend-remix/**'
-      - '.github/workflows/frontend.yaml'
+      - '.github/workflows/frontend.yml'
 
 jobs:
   deploy:

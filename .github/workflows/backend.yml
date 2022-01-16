@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'app/backend-heroku/**'
-      - '.github/workflows/backend.yaml'
+      - '.github/workflows/backend.yml'
 
 jobs:
   build:
