@@ -1,0 +1,23 @@
+name: frontend
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'app/frontend-remix/**'
+      - '.github/workflows/frontend.yaml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v2
+      - name: build
+        run: 'yarn && yarn build'
+      - name: publish
+        uses: cloudflare/wrangler-action@1.3.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: './apps/frontend-remix'
