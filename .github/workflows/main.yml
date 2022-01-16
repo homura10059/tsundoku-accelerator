@@ -16,14 +16,18 @@ jobs:
   deploy-frontend-remix:
     needs: build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./apps/frontend-remix
     steps:
       - name: deploy
         run: ls -l ./
-        working-directory: ./apps/frontend-remix
   deploy-backend-heroku:
     needs: build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./apps/backend-heroku
     steps:
       - name: deploy
         run: ls -l ./
-        working-directory: ./apps/backend-heroku
