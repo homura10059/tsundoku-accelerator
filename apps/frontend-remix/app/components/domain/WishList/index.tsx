@@ -1,11 +1,11 @@
 import cx from 'classnames'
+import { getJstString } from 'domain-less/functions/dates'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'remix'
 
 import { WishListDetail } from '../../../domain/models'
 import { getWishLists } from '../../../domain/service/wishLists'
 import { supabase } from '../../../libs/auth'
-import { getJstString } from '../../../libs/dates'
 
 type Props = {
   wishListDetails: WishListDetail[]

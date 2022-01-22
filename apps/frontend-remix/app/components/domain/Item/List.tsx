@@ -1,9 +1,9 @@
 import cx from 'classnames'
+import { getJstString } from 'domain-less/functions/dates'
 import React from 'react'
 import { Link } from 'remix'
 
 import { Item } from '../../../domain/models'
-import { getJstString } from '../../../libs/dates'
 
 type Props = {
   items: Item[]

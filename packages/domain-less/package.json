@@ -4,8 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "date-fns-tz": "^1.2.2",
     "discord.js": "^13.5.1",
     "puppeteer": "^13.0.1",
     "puppeteer-autoscroll-down": "^1.0.0"
+  },
+  "devDependencies": {
+    "lint": "*",
+    "tsconfig": "*"
   }
 }
