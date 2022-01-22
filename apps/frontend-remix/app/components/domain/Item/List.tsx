@@ -1,20 +1,37 @@
 import cx from 'classnames'
 import { getJstString } from 'domain-less/functions/dates'
+import { Item } from 'ebooks-domain/models'
 import React from 'react'
 import { Link } from 'remix'
-
-import { Item } from '../../../domain/models'
 
 type Props = {
   items: Item[]
 }
-export const ListItem: React.VFC<Item> = ({ title, scrapedAt, id }) => {
+export const ListItem: React.VFC<Item> = ({
+  title,
+  scrapedAt,
+  id,
+  thumbnailUrl
+}) => {
   return (
     <Link to={`/items/${id}`}>
-      <dd>
-        <dt>{title}</dt>
-        <dd>{scrapedAt ? getJstString(scrapedAt) : '----'}</dd>
-      </dd>
+      <dl className={'flex gap-x-2'}>
+        <div className={'order-2'}>
+          <dt className={'text-lg'}>{title}</dt>
+          <dd className={'text-sm'}>
+            更新日時: {scrapedAt ? getJstString(scrapedAt) : '----'}
+          </dd>
+        </div>
+        {thumbnailUrl && (
+          <dd className={'order-1'}>
+            <img
+              className={cx('h-[135px] min-w-[102px]')}
+              src={thumbnailUrl}
+              alt={`${title}の表紙`}
+            />
+          </dd>
+        )}
+      </dl>
     </Link>
   )
 }
@@ -31,7 +48,10 @@ export const List: React.VFC<Props> = ({ items }) => {
       ])}
     >
       {items.map(item => (
-        <div className={cx(['block', 'border-2', 'border-black'])}>
+        <div
+          className={cx(['block', 'border-2', 'border-black'])}
+          key={item.id}
+        >
           <ListItem {...item} />
         </div>
       ))}

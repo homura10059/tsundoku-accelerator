@@ -23,8 +23,8 @@ export const NavList = () => {
   return (
     <nav>
       <ul className={'flex gap-x-4'}>
-        {links.map(({ to, text }) => (
-          <li>
+        {links.map(({ to, text }, index) => (
+          <li key={index}>
             <NavLink to={to} className={activeStyle}>
               {text}
             </NavLink>

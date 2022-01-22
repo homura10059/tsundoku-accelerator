@@ -1,11 +1,11 @@
 import { format } from 'date-fns'
+import { WishListDetail } from 'ebooks-domain/models'
+import { getWishListDetail } from 'ebooks-domain/service/wishLists'
 import React from 'react'
 import type { LoaderFunction, MetaFunction } from 'remix'
 import { useLoaderData } from 'remix'
 
 import { List } from '../../components/domain/Item/List'
-import { WishListDetail } from '../../domain/models'
-import { getWishListDetail } from '../../domain/service/wishLists'
 
 type Props = {
   wishList: WishListDetail | null
