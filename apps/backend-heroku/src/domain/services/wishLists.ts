@@ -40,9 +40,20 @@ export const updateWishList = async (wishList: { id: string; url: string }) => {
     .delete()
     .eq('wishListId', wishList.id)
 
+  const { data: newItems, error: error2 } = await supabase
+    .from<definitions['items']>('items')
+    .select('*')
+    .in('url', scraped.itemUrlList)
+
+  if (error2 || !newItems) {
+    return
+  }
+
   await supabase
     .from<definitions['wishLists_to_items']>('wishLists_to_items')
-    .upsert(items.map(item => ({ wishListId: wishList.id, itemId: item.id })))
+    .upsert(
+      newItems.map(item => ({ wishListId: wishList.id, itemId: item.id }))
+    )
 }
 
 export const scanWishList = async (id: string) => {
