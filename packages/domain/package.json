@@ -1,0 +1,15 @@
+{
+  "name": "domain",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint './models/*.{js,ts,jsx,tsx}'",
+    "supabase:codegen": "source ./.env && openapi-typescript \"$SUPABASE_URL/rest/v1/?apikey=$SERVICE_KEY\" --output models/generated/supabase.ts"
+  },
+  "devDependencies": {
+    "lint": "*",
+    "tsconfig": "*",
+    "openapi-typescript": "^4.4.0"
+  }
+}
