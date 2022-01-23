@@ -27,7 +27,8 @@ export const getUser = async (userId: string) => {
               id,
               url,
               scrapedAt,
-              title
+              title,
+              thumbnailUrl
             )
           )
         )
