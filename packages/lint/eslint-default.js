@@ -7,7 +7,8 @@ const config = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'prettier'
+    'prettier',
+    "plugin:tailwindcss/recommended"
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
