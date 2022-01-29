@@ -4,7 +4,6 @@ import { getJstString } from 'pure-functions/libs/dates'
 import React from 'react'
 import { Link } from 'remix'
 
-import { Card } from '../../headless/Card'
 import { CardList } from '../../headless/CardList'
 
 type Props = {

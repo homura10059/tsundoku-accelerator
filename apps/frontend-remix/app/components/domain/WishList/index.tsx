@@ -1,4 +1,3 @@
-import cx from 'classnames'
 import { getJstString } from 'pure-functions/libs/dates'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'remix'
@@ -6,7 +5,6 @@ import { Link } from 'remix'
 import { WishListDetail } from '../../../domain/models'
 import { getWishLists } from '../../../domain/service/wishLists'
 import { supabase } from '../../../libs/auth'
-import { Card } from '../../headless/Card'
 import { CardList } from '../../headless/CardList'
 
 type Props = {
