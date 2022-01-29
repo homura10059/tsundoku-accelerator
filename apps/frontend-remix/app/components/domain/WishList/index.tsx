@@ -7,6 +7,7 @@ import { WishListDetail } from '../../../domain/models'
 import { getWishLists } from '../../../domain/service/wishLists'
 import { supabase } from '../../../libs/auth'
 import { Card } from '../../headless/Card'
+import { CardList } from '../../headless/CardList'
 
 type Props = {
   wishListDetails: WishListDetail[]
@@ -29,21 +30,11 @@ export const ListItem: React.VFC<WishListDetail> = ({
 
 export const WishLists: React.VFC<Props> = ({ wishListDetails }) => {
   return (
-    <div
-      className={cx([
-        'grid',
-        'grid-cols-1',
-        'md:grid-cols-2',
-        'gap-2',
-        'auto-cols-auto'
-      ])}
-    >
+    <CardList>
       {wishListDetails.map(wishList => (
-        <Card>
-          <ListItem {...wishList} />
-        </Card>
+        <ListItem {...wishList} />
       ))}
-    </div>
+    </CardList>
   )
 }
 

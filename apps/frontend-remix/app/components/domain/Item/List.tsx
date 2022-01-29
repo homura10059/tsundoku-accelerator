@@ -5,6 +5,7 @@ import React from 'react'
 import { Link } from 'remix'
 
 import { Card } from '../../headless/Card'
+import { CardList } from '../../headless/CardList'
 
 type Props = {
   items: Item[]
@@ -40,20 +41,10 @@ export const ListItem: React.VFC<Item> = ({
 
 export const List: React.VFC<Props> = ({ items }) => {
   return (
-    <div
-      className={cx([
-        'grid',
-        'grid-cols-1',
-        'md:grid-cols-2',
-        'gap-2',
-        'auto-cols-auto'
-      ])}
-    >
+    <CardList>
       {items.map(item => (
-        <Card key={item.id}>
-          <ListItem {...item} />
-        </Card>
+        <ListItem {...item} />
       ))}
-    </div>
+    </CardList>
   )
 }
