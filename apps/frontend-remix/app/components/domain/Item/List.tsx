@@ -4,6 +4,8 @@ import { getJstString } from 'pure-functions/libs/dates'
 import React from 'react'
 import { Link } from 'remix'
 
+import { Card } from '../../headless/Card'
+
 type Props = {
   items: Item[]
 }
@@ -48,12 +50,9 @@ export const List: React.VFC<Props> = ({ items }) => {
       ])}
     >
       {items.map(item => (
-        <div
-          className={cx(['block', 'border-2', 'border-black'])}
-          key={item.id}
-        >
+        <Card key={item.id}>
           <ListItem {...item} />
-        </div>
+        </Card>
       ))}
     </div>
   )

@@ -6,6 +6,7 @@ import { Link } from 'remix'
 import { WishListDetail } from '../../../domain/models'
 import { getWishLists } from '../../../domain/service/wishLists'
 import { supabase } from '../../../libs/auth'
+import { Card } from '../../headless/Card'
 
 type Props = {
   wishListDetails: WishListDetail[]
@@ -38,9 +39,9 @@ export const WishLists: React.VFC<Props> = ({ wishListDetails }) => {
       ])}
     >
       {wishListDetails.map(wishList => (
-        <div className={cx(['block', 'border-2', 'border-black'])}>
+        <Card>
           <ListItem {...wishList} />
-        </div>
+        </Card>
       ))}
     </div>
   )
