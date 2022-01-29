@@ -1,7 +1,5 @@
-import { launch, Browser, Page } from 'puppeteer'
-
-
-import {scrollPageToBottom} from "puppeteer-autoscroll-down";
+import { Browser, launch, Page } from 'puppeteer'
+import { scrollPageToBottom } from 'puppeteer-autoscroll-down'
 
 export const getBrowser = (() => {
   let browser: Promise<Browser> | null = null

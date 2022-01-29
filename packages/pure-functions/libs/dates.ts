@@ -8,6 +8,6 @@ export const getUnixTimeInSec = (date: Date): number =>
 export const getUnixTimeNow = (): number => Math.floor(Date.now() / 1000)
 
 export const getJstString = (unixTime: number) => {
-    const date = utcToZonedTime(fromUnixTime(unixTime), 'Asia/Tokyo')
-    return format(date, 'yyyy-MM-dd HH:mm:ss')
+  const date = utcToZonedTime(fromUnixTime(unixTime), 'Asia/Tokyo')
+  return format(date, 'yyyy-MM-dd HH:mm:ss')
 }
