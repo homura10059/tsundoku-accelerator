@@ -1,8 +1,7 @@
 import { BookOpenIcon } from '@heroicons/react/solid'
 import cx from 'classnames'
 import React from 'react'
-import { Link } from 'remix'
-import { redirect } from 'remix'
+import { Link, redirect } from 'remix'
 
 import { supabase } from '../../../libs/auth'
 import { NavList } from './NavLink'

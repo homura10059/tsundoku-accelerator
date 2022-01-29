@@ -1,6 +1,6 @@
 import cx from 'classnames'
-import { getJstString } from 'domain-less/functions/dates'
-import { Item } from 'ebooks-domain/models'
+import { Item } from 'domain-driven/models'
+import { getJstString } from 'pure-functions/libs/dates'
 import React from 'react'
 import { Link } from 'remix'
 

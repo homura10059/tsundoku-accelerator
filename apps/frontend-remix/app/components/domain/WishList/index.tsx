@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import { getJstString } from 'domain-less/functions/dates'
+import { getJstString } from 'pure-functions/libs/dates'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'remix'
 

@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
-import { WishListDetail } from 'ebooks-domain/models'
-import { getWishListDetail } from 'ebooks-domain/service/wishLists'
+import { WishListDetail } from 'domain-driven/models'
+import { getWishListDetail } from 'domain-driven/service/wishLists'
 import React from 'react'
 import type { LoaderFunction, MetaFunction } from 'remix'
 import { useLoaderData } from 'remix'

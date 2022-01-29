@@ -1,5 +1,5 @@
-import { Item } from 'ebooks-domain/models'
-import { getAllItemsBy } from 'ebooks-domain/service/items'
+import { Item } from 'domain-driven/models'
+import { getAllItemsBy } from 'domain-driven/service/items'
 import React, { useEffect, useState } from 'react'
 
 import { supabase } from '../../../libs/auth'
