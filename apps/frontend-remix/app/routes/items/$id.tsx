@@ -1,11 +1,13 @@
+import cx from 'classnames'
 import { format } from 'date-fns'
+import { ItemDetail } from 'domain-driven/models'
+import { getItemDetail } from 'domain-driven/service/itemHistories'
+import { getJstString } from 'pure-functions/libs/dates'
 import React, { Suspense } from 'react'
 import type { LoaderFunction, MetaFunction } from 'remix'
 import { useLoaderData } from 'remix'
 
 import { ClientOnly } from '../../components/headless/ClientOnly'
-import { ItemDetail } from '../../domain/models'
-import { getItemDetail } from '../../domain/service/itemHistories'
 
 const ChartComponent = React.lazy(
   () => import('../../components/domain/Item/Chart')
@@ -31,20 +33,27 @@ export default function Items() {
     real: (history.price ?? 0) - (history.points ?? 0),
     timestamp: format(new Date(history.scrapedAt * 1000), 'yyyy/MM/dd')
   }))
+  if (data.item === null) return null
   return (
     <>
-      <h1>
-        <a href={data.item?.url}>{data.item?.title}</a>
-      </h1>
-      <ul>
-        <li>
-          更新日時：
-          {format(
-            new Date((data.item?.scrapedAt ?? 0) * 1000),
-            'yyyy/MM/dd HH:mm:ss'
-          )}
-        </li>
-      </ul>
+      <dl className={'flex gap-x-2'}>
+        <div className={'order-2'}>
+          <dt className={'text-lg'}>{data.item.title}</dt>
+          <dd className={'text-sm'}>
+            更新日時:{' '}
+            {data.item.scrapedAt ? getJstString(data.item.scrapedAt) : '----'}
+          </dd>
+        </div>
+        {data.item.thumbnailUrl && (
+          <dd className={'order-1'}>
+            <img
+              className={cx('h-[135px] min-w-[102px]')}
+              src={data.item.thumbnailUrl}
+              alt={`${data.item.title}の表紙`}
+            />
+          </dd>
+        )}
+      </dl>
       <ClientOnly>
         <Suspense fallback={<div>Loading...</div>}>
           <ChartComponent timeline={timeline} />

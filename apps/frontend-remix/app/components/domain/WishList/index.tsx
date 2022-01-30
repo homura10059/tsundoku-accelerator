@@ -1,9 +1,9 @@
+import { WishListDetail } from 'domain-driven/models'
+import { getWishLists } from 'domain-driven/service/wishLists'
 import { getJstString } from 'pure-functions/libs/dates'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'remix'
 
-import { WishListDetail } from '../../../domain/models'
-import { getWishLists } from '../../../domain/service/wishLists'
 import { supabase } from '../../../libs/auth'
 import { CardList } from '../../headless/CardList'
 
