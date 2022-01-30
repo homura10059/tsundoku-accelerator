@@ -1,7 +1,7 @@
 import cx from 'classnames'
 import { format } from 'date-fns'
 import { ItemDetail } from 'domain-driven/models'
-import { getItemDetail } from 'domain-driven/service/itemHistories'
+import { getItemDetail } from 'domain-driven/services/itemHistories'
 import { getJstString } from 'pure-functions/libs/dates'
 import React, { Suspense } from 'react'
 import type { LoaderFunction, MetaFunction } from 'remix'

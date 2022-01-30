@@ -14,7 +14,7 @@ export type WishListDetail = WishList & {
   wishLists_to_items: {
     wishListId: string
     itemId: string
-    items: Item
+    items: ItemDetail
   }[]
 }
 

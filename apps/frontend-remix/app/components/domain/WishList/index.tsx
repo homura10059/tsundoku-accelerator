@@ -1,5 +1,5 @@
 import { WishListDetail } from 'domain-driven/models'
-import { getWishLists } from 'domain-driven/service/wishLists'
+import { getWishLists } from 'domain-driven/services/wishLists'
 import { getJstString } from 'pure-functions/libs/dates'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'remix'
