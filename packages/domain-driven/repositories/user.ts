@@ -1,5 +1,6 @@
 import { supabase } from '../libs/auth'
-import { User } from '../models'
+import { convertWishListDetail } from './converter'
+import { User } from './models'
 
 export const getUser = async (userId: string) => {
   const { data: users, error } = await supabase
@@ -28,5 +29,11 @@ export const getUser = async (userId: string) => {
   if (error) throw error
   if (users === null || users.length !== 1) return null
 
-  return users[0]
+  const { id, users_to_wishLists } = users[0]
+  const wishListData = users_to_wishLists.flatMap(x => x.wishLists)
+
+  return {
+    id,
+    wishLists: wishListData.map(convertWishListDetail)
+  }
 }

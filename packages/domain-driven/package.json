@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint './**/*.{js,ts,jsx,tsx}'",
-    "supabase:codegen": "source ./.env && openapi-typescript \"$SUPABASE_URL/rest/v1/?apikey=$SERVICE_KEY\" --output models/generated/supabase.ts"
+    "supabase:codegen": "source ./.env && openapi-typescript \"$SUPABASE_URL/rest/v1/?apikey=$SERVICE_KEY\" --output repositories/models/generated/supabase.ts"
   },
   "devDependencies": {
     "lint": "*",
