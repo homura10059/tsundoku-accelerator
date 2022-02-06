@@ -1,0 +1,7 @@
+dist
+node_modules
+build
+dist
+public/build
+
+app/types/generated
